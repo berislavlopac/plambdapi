@@ -21,6 +21,11 @@ resource "aws_s3_bucket" "bucket" {
 # API Gateway
 resource "aws_api_gateway_rest_api" "api" {
   name = "${var.lambda_name}_api"
+  binary_media_types = [
+    "application/zip",
+    "application/octet-stream",
+    "*/*"
+  ]
 }
 
 resource "aws_api_gateway_resource" "api_resource" {
