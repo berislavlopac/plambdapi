@@ -19,7 +19,7 @@ def is_allowed_type(path):
 
 def get_objects():
     bucket = s3.Bucket(S3_BUCKET)
-    return {object.key: object for object in bucket.objects.all()}
+    return {obj.key: obj for obj in bucket.objects.all()}
 
 
 def parse_path(path):
@@ -40,9 +40,9 @@ def handler(event, context):
             # download file
             if path in objects and is_allowed_type(path):
                 summary = objects[path]
-                object = s3.Object(summary.bucket_name, summary.key)
+                obj = s3.Object(summary.bucket_name, summary.key)
                 local_path = f'/tmp/{filename}'
-                object.download_file(local_path)
+                obj.download_file(local_path)
                 with open(local_path, 'rb') as file:
                     data = file.read()
                 data = b64encode(data)
