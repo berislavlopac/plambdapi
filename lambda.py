@@ -3,7 +3,7 @@ from base64 import b64encode
 
 import boto3
 
-page_template = "<html><body><ul>{}</ul></body></html>"
+page_template = "<!DOCTYPE html><html><body><ul>{}</ul></body></html>"
 list_template = '<li><a href="{path}">{name}</a>'
 
 S3_BUCKET = os.environ.get("S3_BUCKET")
