@@ -1,6 +1,12 @@
 PλPI
 ====
 
+| :warning: WARNING          |
+|:---------------------------|
+| This project has not been maintained in years.<br/>If you need custom Python package index on AWS, the authors recommend using [CodeArtifact](https://aws.amazon.com/codeartifact/), which also supports the free tier.      |
+
+This project has not been maintained in years. If you need custom Python package index on AWS, the authors recommend using [CodeArtifact](https://aws.amazon.com/codeartifact/), which also supports the free tier.
+
 **PλPI** (or `PlambdaPI`, which is a play on PyPI) is a simple tool to create an AWS-hosted,  [PEP 503](https://www.python.org/dev/peps/pep-0503/) compliant personal PyPI repository. It's using S3 bucket to host the repository, indexed using a Lambda function via an API Gateway.
 
 Usage
